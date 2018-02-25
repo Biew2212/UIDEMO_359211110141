@@ -1,8 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.adminController">
-
+   <children>
+      <Pane prefHeight="500.0" prefWidth="50.0" style="-fx-background-color: #ee98fb;" />
+      <TabPane layoutX="50.0" layoutY="40.0" prefHeight="460.0" prefWidth="760.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Student">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffc4ff;">
+                     <children>
+                        <TableView fx:id="studentTable" layoutX="204.0" layoutY="57.0" prefHeight="338.0" prefWidth="535.0">
+                          <columns>
+                            <TableColumn fx:id="idcolumn" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="fistnamecolumn" prefWidth="93.0" text="Fistname" />
+                              <TableColumn fx:id="lastnamecolumn" prefWidth="82.0" text="Lastname" />
+                              <TableColumn fx:id="emailcolumn" prefWidth="116.0" text="Email" />
+                              <TableColumn fx:id="dobcolumn" prefWidth="192.0" text="Data of Brith" />
+                          </columns>
+                        </TableView>
+                        <JFXButton fx:id="dtnload" layoutX="611.0" layoutY="23.0" onAction="#loadStudentData" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #c3fdff;" text="Load Data " />
+                        <TextField fx:id="searchTxt" layoutX="204.0" layoutY="23.0" promptText="Search...." />
+                        <VBox layoutY="68.0" prefHeight="200.0" prefWidth="204.0">
+                           <children>
+                              <JFXTextField fx:id="textId" promptText="ID">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="textFistname" layoutX="10.0" layoutY="15.0" promptText="ID" text="Fistname">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="textLastname" layoutX="10.0" layoutY="45.0" promptText="ID" text="Lastname">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="textEmail" layoutX="10.0" layoutY="70.0" promptText="ID" text="Email">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <DatePicker fx:id="textDOB" />
+                           </children>
+                        </VBox>
+                        <JFXButton fx:id="btnClear" layoutX="28.0" layoutY="281.0" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #90caf9;" text="Clear From" />
+                        <JFXButton fx:id="btnAdd" layoutX="28.0" layoutY="313.0" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #8e99f3;" text="Add Data" />
+                        <JFXButton fx:id="btnSave" layoutX="28.0" layoutY="346.0" onAction="#saveStudent" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #9be7ff;" text="Save" />
+                        <JFXButton fx:id="btnEdit" layoutX="216.0" layoutY="403.0" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #ff4081;" text="Edit" />
+                        <JFXButton fx:id="btnDelete" layoutX="380.0" layoutY="403.0" onAction="#deleteStudent" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #c4001d;" text="Delete" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Help?">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffc4ff;">
+                     <children>
+                        <Label layoutX="106.0" layoutY="136.0" prefHeight="31.0" prefWidth="220.0" text="Plaess con" textFill="#0561a8" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Pane layoutX="50.0" layoutY="-3.0" prefHeight="46.0" prefWidth="760.0" style="-fx-background-color: #ee98fb;">
+         <children>
+            <Label layoutX="-39.0" layoutY="8.0" prefHeight="31.0" prefWidth="119.0" text="Welcome !!">
+               <font>
+                  <Font name="Aparajita Bold" size="21.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnlogout" layoutX="641.0" layoutY="11.0" prefHeight="41.0" prefWidth="111.0" style="-fx-background-color: #666ad1;" text="Logout">
+               <font>
+                  <Font name="Arial Unicode MS" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
